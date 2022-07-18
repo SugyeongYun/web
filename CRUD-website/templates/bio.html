@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <section class="card-wide">
+        <nav class="profile-menu">
+            <a href="#"><i class="fas fa-bars"></i></a>
+            <a href="#"><i class="fa-solid fa-laptop"></i></a>
+        </nav>
+        <h3>TECH STACKS</h3>
+        <div class="tech-stacks">
+            <img src="{% static 'img/html.svg' %}">
+            <p>HTML</p>
+            <img src="{% static 'img/css.svg' %}">
+            <p>CSS</p>
+            <img src="{% static 'img/javascript.svg' %}">
+            <p>Javascript</p>
+            <img src="{% static 'img/django.svg' %}">
+            <p>Django</p>
+            <img src="{% static 'img/c.svg' %}">
+            <p>C</p>
+            <img src="{% static 'img/python.svg' %}">
+            <p>Python</p>
+            <img src="{% static 'img/java.svg' %}">
+            <p>Java</p>
+        </div>
+        <div class="github">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/SugyeongYun">https://github.com/SugyeongYun</a>
+        </div>
+    </section>
+</div>
+{% endblock %}

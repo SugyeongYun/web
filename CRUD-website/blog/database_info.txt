@@ -1,0 +1,13 @@
+category
+
+id(pk)
+name
+
+post
+
+id(pk)
+category(fk)
+topic
+title
+contents
+create_date

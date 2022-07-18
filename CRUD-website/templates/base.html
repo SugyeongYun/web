@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sugyeong's Techlog</title>
+  <script src="https://kit.fontawesome.com/50987e8a7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" media="screen and (max-width:1599px)" href="{% static 'css/style_1280.css' %}">
+  <link rel="stylesheet" media="screen and (min-width:1600px)" href="{% static 'css/style_1600.css' %}">
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+  {% block content %}
+  {% endblock %}
+  <script>
+    var cap = document.getElementsByClassName("capitalize");
+    for (var i = 0; i < cap.length; i++) {
+      cap[i].innerHTML = cap[i].innerHTML.toUpperCase();
+    }
+
+    var capf = document.getElementsByClassName("capf");
+    for (var i = 0; i < capf.length; i++) {
+      capf[i].innerHTML = capf[i].innerHTML.charAt(0).toUpperCase() + capf[i].innerHTML.slice(1);
+    }
+  </script>
+  {% block script %}
+  {% endblock %}
+</body>
+
+</html>

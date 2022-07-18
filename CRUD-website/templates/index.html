@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <section class="card-narrow">
+        <nav class="profile-menu">
+            <a href="#"><i class="fas fa-bars"></i></a>
+            <a href="#"><i class="far fa-sticky-note"></i></a>
+        </nav>
+        <article class="profile">
+            <img src="{% static 'img/mu.png' %}" alt="프로필 이미지">
+            <h1>Sugyeong Yun</h1>
+            <h2>Back-end web developer</h2>
+            <a href="{% url 'blog:bio' %}" class="btnView">VIEW MORE</a>
+        </article>
+        <ul class="contact">
+            <li>
+                <i class="fab fa-facebook-f"></i>
+                <span>Visit My Facebook page.</span>
+            </li>
+            <li>
+                <i class="fas fa-envelope"></i>
+                <span>sugyeongyun9@gmail.com</span>
+            </li>
+        </ul>
+    </section>
+</div>
+{% endblock %}

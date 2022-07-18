@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="post-detail">
+        <a class="link-button" href="/blog/{{ post.category.name }}">&lsaquo;&lsaquo; Back to List</a>
+        <h2>{{ post.title }}</h2>
+        <p class="date">Posted {{ post.create_date }}</p>
+        {% if post.modify_date %}
+        <p class="date">Modified {{ post.modify_date }}</p>
+        {% endif %}
+        <p>{{ post.contents|linebreaksbr }}</p>
+        {% if user.is_superuser %}
+        <div class="post-detail-footer">
+            <a class="link-button" href="{% url 'blog:post_modify' post.id %}">Edit</a>
+            <a class="link-button" href="{% url 'blog:post_delete' post.id%}" onclick="deletePost(event)">Delete</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+    function deletePost(e) {
+        if (!confirm('Are you sure?')) {
+            e.preventDefault();
+        }
+        else {
+            alert('Deleted');
+        }
+    }
+</script>
+{% endblock %}
